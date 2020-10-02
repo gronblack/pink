@@ -1,0 +1,130 @@
+@mobile-width-only: 659px;
+@tablet-width: 660px;
+@tablet-width-only: 1199px;
+@desktop-width: 1200px;
+
+@retina-dpi: 144dpi;
+@retina-dppx: 1.5dppx;
+
+body {
+  .mixin_font-family();
+
+  min-width: 320px;
+  margin: 0;
+  padding: 0;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+}
+
+.visually-hidden:not(:focus):not(:active),
+input[type="checkbox"].visually-hidden,
+input[type="radio"].visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  border: 0;
+  padding: 0;
+  white-space: nowrap;
+  clip-path: inset(100%);
+  clip: rect(0 0 0 0);
+  overflow: hidden;
+}
+
+.button {
+  display: block;
+  box-sizing: border-box;
+  min-height: 55px;
+
+  font-weight: bold;
+  line-height: 18px;
+  text-decoration: none;
+
+  padding-top: 14px;
+
+  border: 3px solid;
+  border-radius: 25px;
+}
+
+.button-green {
+  min-height: 63px;
+  width: 100%;
+
+  font-family: "OpenSans", "Myriad Pro", sans-serif;
+  font-size: 18px;
+  line-height: 30px;
+  font-weight: bold;
+  color: #ffffff;
+  text-transform: uppercase;
+
+  background-color: #2aab6d;
+  border-radius: 3px;
+  border-style: none;
+}
+
+.button-green:hover {
+  background-color: #1c9b5e;
+}
+
+.button-green:active {
+  color: rgba(255, 255, 255, 0.3);
+  outline: none;
+}
+
+.button-green:disabled {
+  background-color: #e5e5e5;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src:
+    url("../fonts/opensans.woff2") format("woff2"),
+    url("../fonts/opensans.woff") format("woff");
+  font-weight: normal;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src:
+    url("../fonts/opensansbold.woff2") format("woff2"),
+    url("../fonts/opensansbold.woff") format("woff");
+  font-weight: bold;
+  font-display: swap;
+}
+
+@font-face {
+  font-family: "OpenSans";
+  src:
+    url("../fonts/opensanslight.woff2") format("woff2"),
+    url("../fonts/opensanslight.woff") format("woff");
+  font-weight: lighter;
+  font-display: swap;
+}
+
+::-webkit-input-placeholder {
+  .mixin_form-dark-text();
+}
+
+::-moz-placeholder {
+  .mixin_form-dark-text();
+  line-height: 52px;
+} /* Firefox 19+ */
+
+:-moz-placeholder {
+  .mixin_form-dark-text();
+  line-height: 52px;
+} /* Firefox 18- */
+
+::-ms-input-placeholder {
+  padding-left: 22px;
+  .mixin_form-dark-text();
+}
+
+:-ms-input-placeholder {
+  padding-left: 22px;
+  .mixin_form-dark-text();
+}

@@ -1,0 +1,294 @@
+.main-nav {
+  position: relative;
+
+  .mixin_font-family();
+  color: #ffffff;
+
+  margin: 0 auto;
+  margin-bottom: -70px;
+}
+
+.main-nav__logo {
+  display: block;
+  box-sizing: border-box;
+  min-height: 70px;
+  position: relative;
+
+  background-color: #283645;
+  box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+}
+
+.main-nav__logo-image {
+  position: absolute;
+  top: 5px;
+  left: -52px;
+
+  width: 147px;
+  height: 40px;
+
+  color: #ffffff;
+}
+
+.main-nav__logo:hover .main-nav__logo-image,
+.main-nav__logo:focus .main-nav__logo-image {
+  color: #d22856;
+}
+
+.main-nav__logo:active .main-nav__logo-image {
+  opacity: 0.3;
+}
+
+.main-nav__logo-glasses,
+.main-nav__logo-starglasses,
+.main-nav__logo-stars {
+  display: none;
+}
+
+.main-nav__toggle {
+  position: absolute;
+  top: 21px;
+  right: 20px;
+  width: 50px;
+  height: 24px;
+
+  cursor: pointer;
+  border: none;
+  background-color: transparent;
+}
+
+.main-nav--closed .main-nav__toggle::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  left: 0;
+
+  width: 50px;
+  height: 4px;
+
+  background-color: #ffffff;
+  box-shadow:
+    0 10px 0 0 #ffffff,
+    0 20px 0 0 #ffffff;
+}
+
+.main-nav--closed .main-nav__toggle:hover::before,
+.main-nav--closed .main-nav__toggle:focus::before {
+  background-color: #d22856;
+  box-shadow:
+    0 10px 0 0 #d22856,
+    0 20px 0 0 #d22856;
+}
+
+.main-nav--closed .main-nav__toggle:active::before {
+  background-color: rgba(210, 40, 86, 0.3);
+  box-shadow:
+    0 10px 0 0 rgba(210, 40, 86, 0.3),
+    0 20px 0 0 rgba(210, 40, 86, 0.3);
+}
+
+.main-nav--opened .main-nav__toggle {
+  &::before,
+  &::after {
+    content: "";
+    width: 30px;
+    height: 4px;
+
+    position: absolute;
+    top: 10px;
+    right: -4px;
+
+    background-color: #ffffff;
+  }
+
+  &::before {
+    box-shadow: none;
+    transform: rotate(45deg);
+  }
+
+  &::after {
+    transform: rotate(-45deg);
+  }
+}
+
+.main-nav--opened .main-nav__toggle:hover,
+.main-nav--opened .main-nav__toggle:focus {
+  &::before,
+  &::after {
+    background-color: #d22856;
+  }
+}
+
+.main-nav--opened .main-nav__toggle:active {
+  &::before,
+  &::after {
+    background-color: rgba(210, 40, 86, 0.3);
+  }
+}
+
+.main-nav__list {
+  list-style: none;
+
+  padding: 0;
+  margin: 0;
+}
+
+.main-nav__item {
+  text-align: center;
+
+  background-color: #283645;
+  box-shadow:
+    inset 0 1px 0 0 rgba(255, 255, 255, 0.15),
+    inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+}
+
+.main-nav__item a {
+  display: inline-block;
+  box-sizing: border-box;
+  min-height: 64px;
+  padding-top: 23px;
+
+  font-size: 18px;
+  line-height: 18px;
+  font-weight: bold;
+  color: #ffffff;
+  text-decoration: none;
+  text-transform: uppercase;
+}
+
+.main-nav__item a[href] {
+  &:hover,
+  &:focus {
+    color: #d22856;
+  }
+
+  &:active {
+    color: rgba(210, 40, 86, 0.3);
+  }
+}
+
+.main-nav__item a:not([href]) {
+  border-bottom: 2px solid #ffffff;
+  pointer-events: none;
+}
+
+@media (max-width: @tablet-width-only) {
+  .main-nav--closed {
+    .main-nav__logo {
+      background-color: rgba(0, 0, 0, 0.3);
+      box-shadow: none;
+    }
+
+    .main-nav__list {
+      display: none;
+    }
+  }
+
+  .main-nav--nojs .main-nav__logo {
+    background-color: #283645;
+    box-shadow: inset 0 1px 0 0 rgba(255, 255, 255, 0.15), inset 0 -1px 0 0 rgba(0, 0, 0, 0.15);
+  }
+
+  .main-nav--nojs .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav--nojs .main-nav__list {
+    display: block;
+  }
+}
+
+@media (min-width: @tablet-width) {
+  .main-nav {
+    margin-bottom: -110px;
+  }
+
+  .main-nav__logo {
+    min-height: 110px;
+  }
+
+  .main-nav__logo-image {
+    top: 28px;
+    left: 20px;
+  }
+
+  .main-nav__logo-glasses {
+    display: inline;
+  }
+
+  .main-nav__toggle {
+    top: 45px;
+    right: 20px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .main-nav {
+    background-color: rgba(0, 0, 0, 0.3);
+  }
+
+  .main-nav__wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+
+    box-sizing: border-box;
+    width: 940px;
+
+    margin: 0 auto;
+    margin-bottom: -110px;
+  }
+
+  .main-nav__logo {
+    width: 147px;
+
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .main-nav__logo-image {
+    left: 0;
+  }
+
+  .main-nav__logo-glasses {
+    display: none;
+  }
+
+  .main-nav__logo-starglasses {
+    display: inline;
+    color: #ffffff;
+  }
+
+  .main-nav__logo:hover .main-nav__logo-starglasses,
+  .main-nav__logo:focus .main-nav__logo-starglasses {
+    color: #d22856;
+  }
+
+  .main-nav__logo-stars {
+    display: inline;
+    color: #d22856;
+  }
+
+  .main-nav__toggle {
+    display: none;
+  }
+
+  .main-nav__list {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    width: 620px;
+  }
+
+  .main-nav__item {
+    background-color: transparent;
+    box-shadow: none;
+  }
+
+  .main-nav__list a {
+    min-height: 75px;
+    padding-top: 45px;
+
+    font-weight: normal;
+    text-transform: none;
+  }
+}

@@ -1,0 +1,257 @@
+.index-footer {
+  .mixin_font-family();
+
+  position: relative;
+  min-height: 612px;
+
+  background-color: #ffffff;
+}
+
+.index-footer__wrapper {
+  box-sizing: border-box;
+  width: 320px;
+
+  text-align: center;
+  margin: 0 auto;
+}
+
+.index-footer__top {
+  position: relative;
+  box-sizing: border-box;
+
+  min-height: 413px;
+  padding-top: 42px;
+
+  background-color: #ffffff;
+
+  &::after {
+    content: "";
+    width: 100%;
+    height: 35px;
+
+    position: absolute;
+    left: 0;
+    bottom: -34px;
+
+    background-image: url("../img/bg-triangle-white-footer.svg");
+    background-repeat: no-repeat;
+    background-size: 100% auto;
+  }
+}
+
+.index-footer__text {
+  font-size: 24px;
+  line-height: 29px;
+  font-weight: lighter;
+  color: #283645;
+
+  margin: 0;
+  margin-bottom: 35px;
+}
+
+.index-footer__contacts-item {
+  margin: 0;
+  margin-bottom: 25px;
+
+  &:last-child {
+    margin-bottom: 0;
+  }
+}
+
+.index-footer__bold {
+  font-size: 18px;
+  line-height: 22px;
+  font-weight: bold;
+  color: #000000;
+}
+
+.index-footer__red {
+  font-size: 24px;
+  line-height: 30px;
+  font-weight: lighter;
+  color: #d22856;
+}
+
+//IE 11+
+@media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+  .index-footer__red,
+  .index-footer__text {
+    font-weight: 800;
+  }
+}
+
+//Edge
+@supports (-ms-ime-align:auto) {
+  .index-footer__red,
+  .index-footer__text {
+    font-weight: 800;
+  }
+}
+
+.index-footer__map {
+  height: 200px;
+
+  background-color: #e9e5dc;
+  background-image: url("../img/bg-map-mobile@1x.jpg");
+  background-size: 320px auto;
+  background-position: 50% 50%;
+  background-repeat: no-repeat;
+
+  @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+    background-image: url("../img/bg-map-mobile@2x.jpg");
+  }
+}
+
+.index-footer__map-frame {
+  width: 100%;
+  height: inherit;
+
+  border: none;
+}
+
+.index-footer__bottom {
+  display: none;
+}
+
+@media (min-width: @tablet-width) {
+  .index-footer {
+    min-height: 906px;
+  }
+
+  //IE 10+
+  @media screen and (-ms-high-contrast: active), (-ms-high-contrast: none) {
+    .index-footer__wrapper {
+      position: relative;
+    }
+
+    .index-footer__bottom {
+      width: 100%;
+
+      position: absolute;
+      bottom: 0;
+      left: 0;
+    }
+  }
+
+  .index-footer__wrapper {
+    width: 660px;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+
+  .index-footer__top {
+    min-height: 406px;
+
+    padding-top: 48px;
+
+    &::after {
+      height: 75px;
+
+      bottom: -74px;
+    }
+  }
+
+  .index-footer__text {
+    font-size: 40px;
+    line-height: 48px;
+
+    margin-bottom: 15px;
+  }
+
+  .index-footer__contacts {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
+
+  .index-footer__contacts-item {
+    width: 320px;
+
+    padding-top: 20px;
+    margin-bottom: 16px;
+  }
+
+  .index-footer__bold {
+    line-height: 40px;
+  }
+
+  .index-footer__red {
+    display: block;
+    margin-top: -2px;
+
+    line-height: 28px;
+  }
+
+  .index-footer__map {
+    height: 373px;
+
+    background-image: url("../img/bg-map-tablet@1x.jpg");
+    background-size: 660px auto;
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/bg-map-tablet@2x.jpg");
+    }
+  }
+
+  .index-footer__bottom {
+    display: block;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .index-footer {
+    min-height: 1065px;
+  }
+
+  .index-footer__wrapper {
+    width: 1200px;
+    //min-height: 1065px;
+  }
+
+  .index-footer__top {
+    min-height: 367px;
+
+    padding-top: 63px;
+
+    &::after {
+      height: 123px;
+
+      bottom: -122px;
+
+      background-image: url("../img/bg-triangle-white-footer-desctop.svg");
+    }
+  }
+
+  .index-footer__text {
+    font-size: 50px;
+    line-height: 60px;
+
+    margin-bottom: 30px;
+  }
+
+  .index-footer__contacts-item {
+    padding-top: 18px;
+  }
+
+  .index-footer__contacts-item:nth-child(2) {
+    order: 1;
+  }
+
+  .index-footer__red {
+    display: inline-block;
+    padding-top: 17px;
+  }
+
+  .index-footer__map {
+    height: 501px;
+
+    background-image: url("../img/bg-map-desktop@1x.jpg");
+    background-size: 1200px auto;
+
+    @media (min-resolution: @retina-dpi), (min-resolution: @retina-dppx) {
+      background-image: url("../img/bg-map-desktop@2x.jpg");
+    }
+  }
+}

@@ -1,0 +1,84 @@
+.social__list {
+  display: flex;
+  justify-content: space-between;
+
+  width: 177px;
+  padding: 0;
+  margin: 0 auto;
+
+  list-style: none;
+}
+
+.social__button {
+  display: block;
+  box-sizing: border-box;
+  width: 51px;
+  height: 51px;
+  position: relative;
+
+  font-size: 0;
+
+  border-radius: 50%;
+  border: 3px solid rgba(40, 54, 69, 0.1);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+
+  &:hover,
+  &:focus {
+    border-color: rgb(40, 54, 69);
+  }
+
+  &:active {
+    border-color: rgba(40, 54, 69, 0.1);
+  }
+}
+
+.social__icon {
+  position: absolute;
+}
+
+.social__button--twitter .social__icon {
+  top: 16px;
+  left: 13px;
+
+  width: 18px;
+  height: 15px;
+}
+
+.social__button--facebook .social__icon {
+  top: 12px;
+  left: 17px;
+
+  width: 9px;
+  height: 18px;
+}
+
+.social__button--youtube .social__icon {
+  top: 15px;
+  left: 16px;
+
+  width: 15px;
+  height: 13px;
+}
+
+.social__button:active .social__icon {
+  opacity: 0.3;
+}
+
+@media (min-width: @tablet-width) {
+  .social__list {
+    display: flex;
+    justify-content: space-between;
+
+    margin: 0;
+    margin-left: -16px;
+    margin-top: 8px;
+  }
+}
+
+@media (min-width: @desktop-width) {
+  .social__list {
+    margin-left: -7px;
+    margin-top: 5px;
+  }
+}
